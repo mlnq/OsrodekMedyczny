@@ -32,8 +32,8 @@ export default observer(function PatientTable() {
       filterable: false,
       flex: 0.4,
       renderCell: (params: GridCellParams) => {
-        //  const id = Number.parseInt(params.row.id as string);
-         const id=params.row.id as string;
+         const id = Number.parseInt(params.row.id as string);
+        //  const id=params.row.id as string;
          return (
             <IconButton component={Link} to={`../patientEdit/${id}`} color="primary">
                <EditIcon />
@@ -65,8 +65,8 @@ export default observer(function PatientTable() {
       filterable: false,
       flex: 0.4,
       renderCell: (params: GridCellParams) => {
-        //  const id = Number.parseInt(params.row.id as string);
-         const id=params.row.id as string;
+         const id = Number.parseInt(params.row.id as string);
+        //  const id=params.row.id as string;
   
          return (
             <IconButton onClick={() => onDeleteSelected(id)} color="primary">
@@ -77,7 +77,7 @@ export default observer(function PatientTable() {
    },
   ]
   
-  const onDeleteSelected = (id:string) => {
+  const onDeleteSelected = (id:number) => {
     deletePatient(id);
   };
 

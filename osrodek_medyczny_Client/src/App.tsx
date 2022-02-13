@@ -3,15 +3,17 @@ import logo from './logo.svg';
 import './App.css';
 import Navbar from './app/common/Navbar';
 import { Grid } from '@mui/material';
-import PatientDashboard from './app/modules/PatientDashboard/PatientDashboard';
-import PatientTable from './app/modules/PatientDashboard/PatientTable'
+import PatientDashboard from './app/modules/patientDashboard/PatientDashboard';
+import PatientTable from './app/modules/patientDashboard/PatientTable'
 import {
   Routes,Route, BrowserRouter,
 } from "react-router-dom";
-import PatientCard from './app/modules/PatientDashboard/PatientCard';
-import PatientModal from './app/modules/PatientDashboard/___PatientModal';
-import PatientForm from './app/modules/PatientDashboard/PatientForm';
+import PatientCard from './app/modules/patientDashboard/PatientCard';
+import PatientModal from './app/modules/patientDashboard/___PatientModal';
+import PatientForm from './app/modules/patientDashboard/PatientForm';
 import MainPage from './app/modules/mainPage/MainPage';
+import ResearchProjectTable from './app/modules/researchProjectDashboard/ResearchProjectTable';
+import ResearchProjectForm from './app/modules/researchProjectDashboard/ResearchProjectForm';
 
 
 
@@ -26,10 +28,17 @@ function App() {
             
       <Routes>
               <Route path="/" element={<MainPage/>}/>
+              {/* Patients */}
               <Route path="patients" element={<PatientTable/>}/>
               {/* Form */}
               <Route path="/patientEdit/:id" element={<PatientForm/>}/>
               <Route path="/patientCreate" element={<PatientForm/>}/>
+
+              {/* ResearchProjects */}
+              <Route path="/projects" element={<ResearchProjectTable/>}></Route>
+               {/* Form */}
+               <Route path="/projectEdit/:id" element={<ResearchProjectForm/>}/>
+               <Route path="/projectCreate" element={<ResearchProjectForm/>}/>
       </Routes>
             
             </Grid>

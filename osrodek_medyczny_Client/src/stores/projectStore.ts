@@ -1,38 +1,43 @@
 import { makeAutoObservable ,runInAction} from "mobx";
 import { StringLiteralType } from "typescript";
-import Patients from "../data/Patients.json"
 import Patient from "../models/patient";
 import { v4 as uuid } from 'uuid';
-import PatientDashboard from "../app/modules/patientDashboard/PatientDashboard";
 
+import test from '../data/researchProjects.json'
+import Project from "../models/project";
 
-export default class PatientStore{
+export default class ProjectStore{
 
-    testData=Patients;
-    patientRegistry: Map<number,Patient>= new Map<number,Patient>();
+    testData=test;
+    projectRegistry: Map<number,Project>= new Map<number,Project>();
     loading = false;
+    selectedProject= <undefined | Project> undefined;
     loadingInitial = true;
 
     constructor(){
         makeAutoObservable(this);
     }
 
-    get patients() {
-        return Array.from(this.patientRegistry.values()); 
+    get getSelectedProject(){
+        return this.selectedProject;
+    }
+
+    get projects() {
+        return Array.from(this.projectRegistry.values()); 
     }
 
     setLoadingInitial = (state:boolean) => {
         this.loadingInitial=state;
     }
     
-    loadPatients = async () =>{
+    loadProjects = async () =>{
         this.setLoadingInitial(true);
 
             try{
                 // const patientLoad = await agent.Patients.list();
                 const patientLoad = this.testData;
-                patientLoad.forEach((patient:Patient) => 
-                    this.patientRegistry.set(patient.id,patient)
+                patientLoad.forEach((project:Project) => 
+                    this.projectRegistry.set(project.id,project)
                 );
                 this.setLoadingInitial(false);
             }
@@ -43,18 +48,17 @@ export default class PatientStore{
     }
 
    
-    deletePatient = async (id:number) => {
+    deleteProject = async (id:number) => {
         this.loading=true;
         try{
             //  await agent.Patients.delete(id);
              runInAction(()=>{
-                this.patientRegistry.delete(id);
+                this.projectRegistry.delete(id);
                 this.loading=false;
             });
-            console.log(this.patients)
-
+            console.log(this.projects)
             //NADPISANIE CAŁEGO JSONA AKTUALNIE BO NIE MAM BAZY
-            this.testData=this.patients;
+            this.testData=this.projects;
         }
         catch(e)
         {
@@ -65,18 +69,17 @@ export default class PatientStore{
         }
     }
 
-    createPatient = async (patient: Patient) =>{
+    createProject = async (project: Project) =>{
         this.loading =true;
         try{
-            //const response = await agent.Patients.create(patient);
+            //const response = await agent.projects.create(project);
 
-            // patient.id=uuid();
-            // TYMCZASOWE ID
+            //TYMCZASOWE ID 
             let max=10000; let min=400;
-            patient.id=Math.floor(Math.random() * (max - min + 1)) + min;
+            project.id=Math.floor(Math.random() * (max - min + 1)) + min;
             runInAction(() => {
-                // patient.id = response.id;
-                this.patientRegistry.set(patient.id,patient);
+                // project.id = response.id;
+                this.projectRegistry.set(project.id,project);
                 this.loading=false;
             });
         }
@@ -88,12 +91,12 @@ export default class PatientStore{
         }
     }
 
-    updatePatient = async(patient:Patient)=>{
+    updateProject = async(project:Project)=>{
         this.loading=true;
         try{
             // await agent.Outposts.update(outpost);
             runInAction(()=>{
-                this.patientRegistry.set(patient.id,patient);
+                this.projectRegistry.set(project.id,project);
                 this.loading=false;
             });
         }
@@ -104,28 +107,27 @@ export default class PatientStore{
         }
     }
 
-    loadPatient = async (id:number) => {
-        let patient = this.patientRegistry.get(id);
+    loadProject = async (id:number) => {
+        let project = this.projectRegistry.get(id);
         //EDIT zwaraca dane  do forma
-        if(patient){
-            console.log(`Taki obiekt pacjent  w promise istnieje id:${id}, patient.name: ${patient.name}`);
-            patient.id=id;
-            // this.selectedPatient = patient;
-            return patient;
+        if(project){
+            console.log(`Taki obiekt  w promise istnieje id:${id}, project.name: ${project.name}`);
+            project.id=id;
+            this.selectedProject = project;
+            return project;
         }
         else {
             this.loadingInitial = true;
             try{
                 //ladowanie ciała DTO 
+                // project = await agent!.Projects.details(id);
 
-                // patient = await agent!.Patients.details(id);
 
-
-                this.patientRegistry.set(patient!.id,patient!);
-                // this.selectedPatient = patient;
+                this.projectRegistry.set(project!.id,project!);
+                this.selectedProject = project;
 
                 this.setLoadingInitial(false);
-                return patient;
+                return project;
             }
             catch(e)
             {
@@ -134,4 +136,5 @@ export default class PatientStore{
             }
         }
     }
+
 }

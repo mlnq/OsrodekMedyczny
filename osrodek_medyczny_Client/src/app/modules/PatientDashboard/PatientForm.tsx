@@ -18,7 +18,7 @@ export default function PatientForm(){
     const {id} = useParams<{id: string}>();
 
     const [patient, setPatient] = useState({
-        id: '',
+        id: 0,
         name: '',
         surname: '',
         pesel: 0,
@@ -38,8 +38,7 @@ export default function PatientForm(){
 
     useEffect(()=>{
         if(id!== undefined) 
-        //ew parseInt(id) jezeli zmienie
-        loadPatient(id).then(
+        loadPatient(parseInt(id)).then(
             o=>{
                 //czyszczenie nullowanych danych
                 o = JSON.parse(JSON.stringify(o).replace(/:null/gi, ":\"\"")); 
