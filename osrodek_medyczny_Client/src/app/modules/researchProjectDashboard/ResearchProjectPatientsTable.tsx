@@ -8,6 +8,9 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import researchPatientsTable from '../../../data/researchPatientsTable.json'
 import Box from '@mui/material/Box';
 import ChangeCircleIcon from '@mui/icons-material/ChangeCircle';
+import AddIcon from '@mui/icons-material/Add';
+
+
 
 const getBackgroundColor = (color: string, mode: string) =>
   mode === 'dark' ? darken(color, 0.6) : lighten(color, 0.6);
@@ -102,7 +105,7 @@ export default function ResearchProjectPatientsTable(){
           }}
         >
           <Button component={Link} to="../projectCreate">
-            Dodaj pacjenta do projektu
+          <AddIcon/> Dodaj pacjenta do projektu
           </Button>
 
           <>

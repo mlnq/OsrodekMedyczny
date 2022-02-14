@@ -1,15 +1,14 @@
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { DataGrid, bgBG } from '@mui/x-data-grid';
-import { bgBG as coreBgBG } from '@mui/material/locale';
+import { DataGrid,plPL } from '@mui/x-data-grid';
 
 const theme = createTheme(
   {
     palette: {
-      primary: { main: '#1976d2' },
+      primary: { main: "#1976d2" },
+      secondary: {main: "#07813A"},
     },
   },
-  bgBG,
-  coreBgBG,
+  plPL
 );
 
 export default theme;

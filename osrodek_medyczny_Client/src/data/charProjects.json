@@ -1,0 +1,38 @@
+[
+    {
+      "subject": "Projekt1",
+      "fm": 120,
+      "m": 120,
+      "fullMark": 150
+    },
+    {
+      "subject": "Projekt2",
+      "fm": 98,
+      "m": 130,
+      "fullMark": 150
+    },
+    {
+      "subject": "Projekt3",
+      "fm": 86,
+      "m": 130,
+      "fullMark": 150
+    },
+    {
+      "subject": "Projekt4",
+      "fm": 99,
+      "m": 100,
+      "fullMark": 150
+    },
+    {
+      "subject": "Projekt5",
+      "fm": 85,
+      "m": 90,
+      "fullMark": 150
+    },
+    {
+      "subject": "Projekt6",
+      "fm": 65,
+      "m": 85,
+      "fullMark": 150
+    }
+  ]

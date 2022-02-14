@@ -10,7 +10,7 @@ import { useEffect } from 'react';
 import LoadingComponent from '../../common/LoadingComponent';
 import { observer } from 'mobx-react-lite';
 import { Link } from 'react-router-dom';
-
+import AddIcon from '@mui/icons-material/Add';
 
 export default observer(function PatientTable() {
  
@@ -97,7 +97,7 @@ export default observer(function PatientTable() {
 
    return (
     <div style={{ height: 520, width: '100%'}}>
-      <Button component={Link} to="../patientCreate">Dodaj Pacjenta</Button>
+      <Button component={Link} to="../patientCreate"><AddIcon></AddIcon>Dodaj Pacjenta</Button>
       <DataGrid
         localeText={plPL.components.MuiDataGrid.defaultProps.localeText}
         // sx={{fontSize:'0.8em'}}

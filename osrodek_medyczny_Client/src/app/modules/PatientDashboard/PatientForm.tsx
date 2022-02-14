@@ -50,7 +50,7 @@ export default function PatientForm(){
 
    
     function handleFormSubmit(patient: Patient){
-       alert(JSON.stringify(patient));
+      //  alert(JSON.stringify(patient));
        if(!patient.id) createPatient(patient).then(()=> navigate(`../patients`))
        else updatePatient(patient).then(()=> navigate(`../patients`))
     }

@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Projekt1",
+    "fm": 120,
+    "m": 50,
+    "all": 170
+  },
+  {
+    "name": "Projekt2",
+    "fm": 450,
+    "m": 230,
+    "all": 680
+  },
+  {
+    "name": "Projekt3",
+    "fm": 120,
+    "m": 230,
+    "all": 350
+  },
+  {
+    "name": "Projekt4",
+    "fm": 512,
+    "m": 673,
+    "all": 1185
+  },
+  {
+    "name": "Projekt5",
+    "fm": 567,
+    "m": 525,
+    "all": 1092
+  },
+  {
+    "name": "Projekt6",
+    "fm": 402,
+    "m": 330,
+    "all": 732
+  }
+]

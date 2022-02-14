@@ -11,6 +11,7 @@ import { observer } from "mobx-react-lite";
 import LoadingComponent from "../../common/LoadingComponent";
 import ResearchProjectModal from "./ResearchProjectModal";
 import ResearchProjectPatientsTable from "./ResearchProjectPatientsTable";
+import AddIcon from '@mui/icons-material/Add';
 
 export default observer(function ResearchProjectTable()
 {
@@ -102,7 +103,7 @@ export default observer(function ResearchProjectTable()
     <ResearchProjectModal handleOpen={handleOpen} handleClose={handleClose} open={open}/>
     
     <div style={{ height: 520, width: '100%'}}>
-      <Button component={Link} to="../projectCreate">Utwórz nowy projekt badawczy</Button>
+      <Button component={Link} to="../projectCreate"><AddIcon></AddIcon>Utwórz nowy projekt badawczy</Button>
       <DataGrid
         localeText={plPL.components.MuiDataGrid.defaultProps.localeText}
         sx={{

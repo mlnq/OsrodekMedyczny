@@ -3,7 +3,7 @@ import { StringLiteralType } from "typescript";
 import Patients from "../data/Patients.json"
 import Patient from "../models/patient";
 import { v4 as uuid } from 'uuid';
-import PatientDashboard from "../app/modules/patientDashboard/PatientDashboard";
+import PatientDashboard from "../app/modules/patientDashboard/___PatientDashboard";
 
 
 export default class PatientStore{

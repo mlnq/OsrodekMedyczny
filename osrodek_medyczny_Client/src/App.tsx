@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Navbar from './app/common/Navbar';
 import { Grid } from '@mui/material';
-import PatientDashboard from './app/modules/patientDashboard/PatientDashboard';
+import PatientDashboard from './app/modules/patientDashboard/___PatientDashboard';
 import PatientTable from './app/modules/patientDashboard/PatientTable'
 import {
   Routes,Route, BrowserRouter,
