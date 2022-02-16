@@ -21,9 +21,8 @@ const style = {
     transform: 'translate(-50%, -50%)',
     width:'80%',
     bgcolor: 'background.paper',
-    // border: '2px solid #000',
     boxShadow: 24,
-    p: 4,
+    p: 6,
   };
   
 export default function ResearchProjectModal({handleOpen,handleClose,open}:Props){
@@ -33,7 +32,6 @@ export default function ResearchProjectModal({handleOpen,handleClose,open}:Props
 
 
     return (
-    <div>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -60,6 +58,5 @@ export default function ResearchProjectModal({handleOpen,handleClose,open}:Props
           </Box>
         </Fade>
       </Modal>
-    </div>
     );
 }

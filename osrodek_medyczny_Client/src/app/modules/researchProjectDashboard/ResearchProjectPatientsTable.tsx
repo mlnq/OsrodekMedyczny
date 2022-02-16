@@ -53,7 +53,7 @@ export default function ResearchProjectPatientsTable(){
        const toggleAgreement = useCallback(
         (id: GridRowId) => () => {
           
-            //TODO, LOGIKA ZE STORA MUSI TU WLECIEĆ
+          //logika
             setRows((prevRows) =>
             prevRows.map((row) =>
               row.id === id ? { ...row, agreement: !row.agreement } : row,

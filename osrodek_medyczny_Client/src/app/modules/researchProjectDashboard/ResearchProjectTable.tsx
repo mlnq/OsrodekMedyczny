@@ -34,8 +34,7 @@ export default observer(function ResearchProjectTable()
           filterable: false,
           flex: 0.4,
           renderCell: (params: GridCellParams) => {
-            //  const id = Number.parseInt(params.row.id as string);
-             const id=params.row.id as string;
+             const id = Number.parseInt(params.row.id as string);
              return (
                 <IconButton component={Link} to={`../projectEdit/${id}`} color="primary">
                    <EditIcon />
@@ -50,9 +49,7 @@ export default observer(function ResearchProjectTable()
            filterable: false,
            flex: 0.5,
            renderCell: (params: GridCellParams) => {
-              const id = Number.parseInt(params.row.id as string);
-            //  const id=params.row.id as string;
-       
+              const id = Number.parseInt(params.row.id as string);   
               return (
                  <IconButton onClick={() => onDetailsSelected(id)} color="primary">
                     <DetailsIcon />
@@ -68,8 +65,6 @@ export default observer(function ResearchProjectTable()
            flex: 0.4,
            renderCell: (params: GridCellParams) => {
               const id = Number.parseInt(params.row.id as string);
-            //   const id=params.row.id as string;
-       
               return (
                  <IconButton onClick={() => onDeleteSelected(id)} color="primary">
                     <DeleteIcon />
@@ -118,7 +113,6 @@ export default observer(function ResearchProjectTable()
          columns={columns}
          pageSize={10}
          components={{ Toolbar: GridToolbar }}
-         // checkboxSelection
          />
     </div>
 

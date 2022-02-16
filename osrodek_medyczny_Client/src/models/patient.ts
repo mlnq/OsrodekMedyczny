@@ -1,4 +1,18 @@
-export default interface Patient {
+// export default interface Patient {
+//     id: number;
+//     name: string;
+//     surname: string;
+//     email: string;
+//     gender: string;
+//     pesel: number;
+//     city: string;
+//     street: string;
+//     streetNumber:number;
+//     agreement:boolean;
+//     projectId:number;
+//   }
+  
+  export default interface Patient {
     id: number;
     name: string;
     surname: string;

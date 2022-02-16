@@ -39,11 +39,10 @@ export default function PatientForm(){
     useEffect(()=>{
         if(id!== undefined) 
         loadPatient(parseInt(id)).then(
-            o=>{
-                //czyszczenie nullowanych danych
-                o = JSON.parse(JSON.stringify(o).replace(/:null/gi, ":\"\"")); 
-                console.log(o);
-            setPatient(o!);
+            patient=>{
+                patient = JSON.parse(JSON.stringify(patient).replace(/:null/gi, ":\"\"")); 
+                console.log(patient);
+            setPatient(patient!);
         });
 
     },[id,loadPatient])
@@ -54,7 +53,6 @@ export default function PatientForm(){
        if(!patient.id) createPatient(patient).then(()=> navigate(`../patients`))
        else updatePatient(patient).then(()=> navigate(`../patients`))
     }
-    // if(patientStore.loadingInitial) return <LoadingComponent content={"Ładuje formularz ..."}/> 
 
    return (
      <Paper >

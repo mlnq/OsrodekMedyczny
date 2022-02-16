@@ -1,0 +1,32 @@
+[
+    {
+        "id":1,
+        "val":"bazofile",
+        "result":"0,6 %",
+        "norm":"0 - 2"
+    },
+    {
+        "id":2,
+        "val":"erytrocyty",
+        "result":"5,1 mln/μl",
+        "norm":"4,63 - 6,08"
+    },
+    {
+        "id":3,
+        "val":"hemoglobina",
+        "result":"14,7 g/dl",
+        "norm":"13,7 - 17,5"
+    },
+    {
+        "id":4,
+        "val":"MCH",
+        "result":"30 pg",
+        "norm":"25,7 - 32,2"
+    },
+    {
+        "id":5,
+        "val":"MCV",
+        "result":"86 fl",
+        "norm":"79 - 92,2"
+    }
+]

@@ -164,6 +164,7 @@ import {
   Grid,
   IconButton,
   Paper,
+  SvgIcon,
   Switch,
   Toolbar,
   Typography,
@@ -176,7 +177,6 @@ import HealthAndSafetyIcon from "@mui/icons-material/HealthAndSafety";
 import { flexbox } from "@mui/system";
 import { Link, useNavigate } from "react-router-dom";
 
-
 export default function Navbar() {
 
   let navigate = useNavigate();
@@ -184,13 +184,10 @@ export default function Navbar() {
   return (
     <AppBar position="static" sx={{margin:'0 0 2em' }}>
       <Toolbar>
-        
-
-
-        <IconButton sx={{color:"#fff"}} onClick={()=>navigate('/')} >
-          Medicus
+        <IconButton sx={{color:"#fff", }} onClick={()=>navigate('/')} >
+          Medicus 
           <HealthAndSafetyIcon />
-        </IconButton>
+      </IconButton>
 
         <Button
           onClick={()=> navigate("/patients")}
@@ -203,6 +200,13 @@ export default function Navbar() {
           color="inherit">
         Projekty badawcze
         </Button>
+
+        <Button
+          onClick={()=> navigate("/examinations")}
+          color="inherit">
+          Badania
+        </Button>
+
       </Toolbar>
     </AppBar>
   );

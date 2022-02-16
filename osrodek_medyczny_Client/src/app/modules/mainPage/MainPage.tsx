@@ -2,6 +2,7 @@ import { Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react'
 import Summaries from '../summary/Summaries';
+import HealthAndSafetyIcon from "@mui/icons-material/HealthAndSafety";
 
 
 
@@ -15,36 +16,19 @@ export default function MainPage(){
 
             <Grid item xs={12} container justifyContent='center' >
                     <Box >
-                        <Typography variant="h1" >
-                            MEDICUS
+                        <Typography variant="h1" color="primary">
+                            MEDICUS <HealthAndSafetyIcon sx={{fontSize:"1em"}}/>
                         </Typography>
                         
-                        <Typography variant="h6" >
+                        <Typography variant="h6" color="secondary">
                             ZMIENIAMY MEDYCYNĘ NA LEPSZE
                         </Typography>
                     </Box>
             </Grid>
             
-            {/* <Grid item xs={12} margin={5} container justifyContent='center'>
-                        <Typography variant="h6" >
-                            ZAUFALI NAM
-                        </Typography>            </Grid>
-            <Grid item xs={12} sm={2} container justifyContent='center'>
-                    <div style={{width:'100px',height:'100px', backgroundColor:'#ddd'}}></div>
-            </Grid>
-            <Grid item xs={12} sm={2} container justifyContent='center'>
-                    <div style={{width:'100px',height:'100px', backgroundColor:'#ddd'}}></div>
-            </Grid>
-            <Grid item xs={12} sm={2} container justifyContent='center'>
-                    <div style={{width:'100px',height:'100px', backgroundColor:'#ddd'}}></div>
-            </Grid>
-            <Grid item xs={12} sm={2} container justifyContent='center'>
-                    <div style={{width:'100px',height:'100px', backgroundColor:'#ddd'}}></div>
-            </Grid>
-            <Grid item xs={12} sm={2} container justifyContent='center'>
-                    <div style={{width:'100px',height:'100px', backgroundColor:'#ddd'}}></div>
-            </Grid> */}
-
+            <Typography variant="h5" marginTop={10} >
+                Dane statystyczne
+            </Typography>
             <Summaries></Summaries>
         </Grid>
     );

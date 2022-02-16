@@ -14,6 +14,8 @@ import PatientForm from './app/modules/patientDashboard/PatientForm';
 import MainPage from './app/modules/mainPage/MainPage';
 import ResearchProjectTable from './app/modules/researchProjectDashboard/ResearchProjectTable';
 import ResearchProjectForm from './app/modules/researchProjectDashboard/ResearchProjectForm';
+import Examinations from './app/modules/examination/Examinations';
+// import ExaminationResult from './app/modules/examination/ExaminationResult';
 
 
 
@@ -39,6 +41,10 @@ function App() {
                {/* Form */}
                <Route path="/projectEdit/:id" element={<ResearchProjectForm/>}/>
                <Route path="/projectCreate" element={<ResearchProjectForm/>}/>
+
+               {/* Medical Examinations */}
+               <Route path="/examinations" element={<Examinations/>}/>
+               {/* <Route path="/examinationResult" element={<ExaminationResult/>}/> */}
       </Routes>
             
             </Grid>

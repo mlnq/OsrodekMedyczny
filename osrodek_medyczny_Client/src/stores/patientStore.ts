@@ -1,6 +1,6 @@
 import { makeAutoObservable ,runInAction} from "mobx";
 import { StringLiteralType } from "typescript";
-import Patients from "../data/Patients.json"
+import Patients from "../data/patients.json"
 import Patient from "../models/patient";
 import { v4 as uuid } from 'uuid';
 import PatientDashboard from "../app/modules/patientDashboard/___PatientDashboard";
@@ -20,6 +20,56 @@ export default class PatientStore{
     get patients() {
         return Array.from(this.patientRegistry.values()); 
     }
+
+//Tworzone tylko na potrzeby zasymulowania brania danych z serwera (przedstawionych w formie informacji z pliku JSON)
+    // exampleJsonDataToDto()
+    // {
+    //     let result;
+    //     this.testData.forEach(
+    //     e=>{
+
+    //         let patient={
+    //             "id": `${e.id}`,
+    //             "name": `${e.name}`,
+    //             "surname": `${e.surname}`,
+    //             "pesel": `${e.pesel}`,
+    //             "street": `${e.street}`,
+    //             "city": `${e.city}`,
+    //             "homeNumber": `${e.homeNumber}`,
+    //         }
+    //         result.push(patient);
+    //     })
+    //     return result;
+    // }
+
+    // loadPatients = async (outpostId:number,id:number) => {
+    //     let patients = this.chronicleRegistry.get(id);
+        
+    //     // console.log(`Taki obiekt w promise istnieje id:${id}, outpostId: ${chronicle!.name}`);
+    //     //EDIT zwraca dane  do forma
+    //     if(chronicle && outpostId==this.selectedOutpostId){
+    //         console.log('ladowanie danych')
+    //         this.selectedChronicle = chronicle;
+    //         return chronicle;
+    //     }
+    //     else {
+    //         this.loadingInitial = true;
+    //         try{
+    //             this.setSelectedOutpostId(outpostId);
+    //             chronicle = await agent.Chronicles.details(id,outpostId);
+    //             this.setChronicle(chronicle);
+    //             this.selectedChronicle = chronicle;
+    //             this.setLoadingInitial(false);
+    //             return chronicle;
+    //         }
+    //         catch(e)
+    //         {
+    //             console.log(e);
+    //             this.setLoadingInitial(false);
+    //         }
+    //     }
+
+    // }
 
     setLoadingInitial = (state:boolean) => {
         this.loadingInitial=state;
