@@ -1,15 +1,12 @@
+import HealthAndSafetyIcon from "@mui/icons-material/HealthAndSafety";
 import { Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
-import React from 'react'
+import React from 'react';
 import Summaries from '../summary/Summaries';
-import HealthAndSafetyIcon from "@mui/icons-material/HealthAndSafety";
 
 
 
 export default function MainPage(){
-
-
-
 
     return(
         <Grid container justifyContent='center'>

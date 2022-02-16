@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { useStore } from "../../../stores/store";
-import LoadingComponent from "../../common/LoadingComponent";
-import * as Yup from 'yup';
-import { useNavigate, useParams } from "react-router-dom";
 import { Box, Button, Grid, Paper, Typography } from "@mui/material";
-import { Field, Form, Formik, useFormik } from "formik";
-import {TextField} from 'formik-mui';
+import { Field, Form, Formik } from "formik";
+import { TextField } from 'formik-mui';
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import * as Yup from 'yup';
 import Patient from "../../../models/patient";
+import { useStore } from "../../stores/store";
 
 
 export default function PatientForm(){
@@ -17,7 +16,7 @@ export default function PatientForm(){
 
     const {id} = useParams<{id: string}>();
 
-    const [patient, setPatient] = useState({
+    const [patient, setPatient] = useState<Patient>({
         id: 0,
         name: '',
         surname: '',
@@ -49,7 +48,6 @@ export default function PatientForm(){
 
    
     function handleFormSubmit(patient: Patient){
-      //  alert(JSON.stringify(patient));
        if(!patient.id) createPatient(patient).then(()=> navigate(`../patients`))
        else updatePatient(patient).then(()=> navigate(`../patients`))
     }

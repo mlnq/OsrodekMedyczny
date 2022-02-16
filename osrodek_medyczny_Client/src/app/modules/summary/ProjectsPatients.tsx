@@ -1,21 +1,10 @@
 import React from "react";
+import {
+  Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis,
+  YAxis
+} from "recharts";
 import chart from "../../../data/chartPatientsProjects.json";
 
-import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-  BarChart,
-  Bar,
-  RadialBarChart,
-  RadialBar,
-} from "recharts";
-import { Grid } from "@mui/material";
 
 const data = chart;
 
@@ -39,7 +28,6 @@ export default function ProjectsPatients() {
       {/* <Legend /> */}
       <Bar stackId="a" name="Ilość kobiet" type="monotone" dataKey="fm"  strokeWidth={2} fill="#1976d2"/>
       <Bar stackId="a" name="Ilość mężczyzn" type="monotone" dataKey="m" strokeWidth={2} fill="#07813A" />
-      {/* <Line name="Ilość wszystkich pacjentów" type="monotone" dataKey="all" strokeWidth={2} stroke="#888" /> */}
     </BarChart>
     </ResponsiveContainer>
   );

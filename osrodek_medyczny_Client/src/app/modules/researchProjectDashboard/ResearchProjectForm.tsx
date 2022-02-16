@@ -1,17 +1,17 @@
+import { Box, Button, Grid, Paper, Typography } from "@mui/material";
+import { constants } from "buffer";
+import { Field, Form, Formik } from "formik";
+import { TextField } from 'formik-mui';
 import React, { useEffect, useState } from "react";
-import { useStore } from "../../../stores/store";
-import LoadingComponent from "../../common/LoadingComponent";
-import * as Yup from 'yup';
 import { useNavigate, useParams } from "react-router-dom";
-import { Box, Button, Grid, Paper, TextareaAutosize, Typography } from "@mui/material";
-import { Field, Form, Formik, useFormik } from "formik";
-import {TextField} from 'formik-mui';
+import * as Yup from 'yup';
 import Project from "../../../models/project";
+import { useStore } from "../../stores/store";
 
 
 export default function ProjectForm(){
 
-    let navigate = useNavigate();
+    const navigate = useNavigate();
     const {projectStore} = useStore();
     const {loadProjects,loadProject,createProject,updateProject} = projectStore;
 
@@ -32,24 +32,21 @@ export default function ProjectForm(){
     useEffect(()=>{
         if(id!== undefined) 
         loadProject(parseInt(id)).then(
-            o=>{
-                //czyszczenie nullowanych danych
-                o = JSON.parse(JSON.stringify(o).replace(/:null/gi, ":\"\"")); 
-                console.log(o);
-            setProject(o!);
+          project=>{
+                project = JSON.parse(JSON.stringify(project).replace(/:null/gi, ":\"\"")); 
+                console.log(project);
+                setProject(project!);
         });
 
     },[id,loadProject])
 
    
     function handleFormSubmit(project: Project){
-      //  alert(JSON.stringify(project));
        if(!project.id) createProject(project).then(()=> navigate(`../projects`))
        else updateProject(project).then(()=> navigate(`../projects`))
 
       }
 
-   // if(projectStore.loadingInitial) return <LoadingComponent content={"Ładuje formularz ..."}/> 
    return (
      <Paper>
        <Box padding={4} margin={4}>

@@ -1,19 +1,11 @@
 import React from "react";
+import {
+  Bar, BarChart, CartesianGrid, Legend,
+  ResponsiveContainer, Tooltip, XAxis,
+  YAxis
+} from "recharts";
 import chart from "../../../data/chartPatients.json";
 
-import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-  BarChart,
-  Bar,
-} from "recharts";
-import { Grid } from "@mui/material";
 
 const data = chart;
 

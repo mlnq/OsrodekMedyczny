@@ -1,21 +1,19 @@
+import AddIcon from '@mui/icons-material/Add';
+import DeleteIcon from '@mui/icons-material/Delete';
+import DetailsIcon from '@mui/icons-material/Details';
+import EditIcon from '@mui/icons-material/Edit';
 import { Button, IconButton } from "@mui/material";
 import { DataGrid, GridCellParams, GridToolbar, plPL } from "@mui/x-data-grid";
+import { observer } from "mobx-react-lite";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import EditIcon from '@mui/icons-material/Edit';
-import DetailsIcon from '@mui/icons-material/Details';
-import DeleteIcon from '@mui/icons-material/Delete';
-import { useStore } from "../../../stores/store";
-import { Console } from "console";
-import { observer } from "mobx-react-lite";
+import { useStore } from "../../stores/store";
 import LoadingComponent from "../../common/LoadingComponent";
 import ResearchProjectModal from "./ResearchProjectModal";
-import ResearchProjectPatientsTable from "./ResearchProjectPatientsTable";
-import AddIcon from '@mui/icons-material/Add';
 
 export default observer(function ResearchProjectTable()
 {
-   const [open,setOpen]= useState(false);
+   const [open,setOpen]= useState<boolean>(false);
    const handleOpen = () => setOpen(true);
    const handleClose = () => setOpen(false);
 
@@ -98,7 +96,7 @@ export default observer(function ResearchProjectTable()
     <ResearchProjectModal handleOpen={handleOpen} handleClose={handleClose} open={open}/>
     
     <div style={{ height: 520, width: '100%'}}>
-      <Button component={Link} to="../projectCreate"><AddIcon></AddIcon>Utwórz nowy projekt badawczy</Button>
+      <Button component={Link} to="../projectCreate" startIcon={<AddIcon/>}>Utwórz nowy projekt badawczy</Button>
       <DataGrid
         localeText={plPL.components.MuiDataGrid.defaultProps.localeText}
         sx={{

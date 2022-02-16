@@ -5,12 +5,12 @@ import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import Typography from '@mui/material/Typography';
-import { useStore } from "../../../stores/store";
+import { useStore } from "../../stores/store";
 import ResearchProjectPatientsTable from "./ResearchProjectPatientsTable";
 
 interface Props{
-    handleOpen:any,
-    handleClose:any,
+    handleOpen: ()=>void,
+    handleClose:()=>void,
     open:boolean,
 }
 

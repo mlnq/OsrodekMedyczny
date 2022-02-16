@@ -1,8 +1,6 @@
-import { IconButton } from "@mui/material";
+import { DataGrid, GridToolbar, plPL } from '@mui/x-data-grid';
 import React from "react";
-import EditIcon from '@mui/icons-material/Edit';
-import { DataGrid, GridActionsCellItem, GridCellParams, GridRowId, GridToolbar, plPL } from '@mui/x-data-grid';
-import resultData from "../../../data/results.json"
+import resultData from "../../../data/results.json";
 
 export default function TableResult()
 {

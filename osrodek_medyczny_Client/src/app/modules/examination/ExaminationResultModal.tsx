@@ -1,9 +1,6 @@
-import { Avatar, Backdrop, Box, Button, Card, CardActions, CardContent, CardHeader, Fade, Grid, IconButton, Modal, Typography } from "@mui/material";
-import React from "react";
-import PatientCard from "../patientDashboard/PatientCard";
-import InfoIcon from '@mui/icons-material/Info';
 import ScienceIcon from '@mui/icons-material/Science';
-import DownloadIcon from '@mui/icons-material/Download';
+import { Backdrop, Box, Fade, Grid, Modal, Typography } from "@mui/material";
+import React from "react";
 import TableResult from "./TableResult";
 
 

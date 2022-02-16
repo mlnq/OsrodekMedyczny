@@ -5,19 +5,18 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from '@emotion/react';
+import { store, StoreContext } from './app/stores/store';
+
 import theme from './theme';
 
 
 
 ReactDOM.render(
   
-    <ThemeProvider theme={theme}>
-  <BrowserRouter>
-  
+  <StoreContext.Provider value={store}>
     <App />
+  </StoreContext.Provider>,
 
-  </BrowserRouter>
-    </ThemeProvider>,
   document.getElementById('root')
 );
 

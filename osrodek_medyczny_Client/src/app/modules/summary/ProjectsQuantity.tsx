@@ -1,22 +1,9 @@
 import React from "react";
-import chart from "../../../data/chartPatients.json";
-
 import {
-RadarChart ,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-  PolarGrid,
-  PolarAngleAxis,
-  Radar,
-  PolarRadiusAxis,
+  Legend, PolarAngleAxis, PolarGrid, PolarRadiusAxis, Radar, RadarChart, ResponsiveContainer
 } from "recharts";
-import { Grid } from "@mui/material";
-import testData from '../../../data/charProjects.json'
+import testData from '../../../data/charProjects.json';
+
 
 const data = testData;
 

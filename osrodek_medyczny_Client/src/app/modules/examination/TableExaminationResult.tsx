@@ -1,8 +1,7 @@
-import { Box, IconButton } from "@mui/material";
+import { Box } from "@mui/material";
+import { DataGrid, GridToolbar, plPL } from '@mui/x-data-grid';
 import React from "react";
-import EditIcon from '@mui/icons-material/Edit';
-import { DataGrid, GridActionsCellItem, GridCellParams, GridRowId, GridToolbar, plPL } from '@mui/x-data-grid';
-import data from "../../../data/examinations.json"
+import data from "../../../data/examinations.json";
 
 export default function TableExaminationResult()
 {

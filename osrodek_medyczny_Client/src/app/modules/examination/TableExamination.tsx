@@ -1,10 +1,8 @@
-import { Box, Button, IconButton, Typography } from "@mui/material";
-import React, { useState } from "react";
 import DetailsIcon from '@mui/icons-material/Details';
-import { DataGrid, GridActionsCellItem, GridCellParams, GridRowId, GridToolbar, plPL } from '@mui/x-data-grid';
-import data from "../../../data/examinations.json"
-import { Link } from "react-router-dom";
-import ResearchProjectModal from "../researchProjectDashboard/ResearchProjectModal";
+import { Box, IconButton } from "@mui/material";
+import { DataGrid, GridCellParams, GridToolbar, plPL } from '@mui/x-data-grid';
+import React, { useState } from "react";
+import data from "../../../data/examinations.json";
 import ExaminationResultModal from "./ExaminationResultModal";
 
 export default function TableExamination()
